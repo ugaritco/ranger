@@ -1,0 +1,76 @@
+{
+    "name": "ugarit/ranger",
+    "description": "Ugarit Ranger is a powerful introspection library for Ugarit applications.",
+    "keywords": [
+        "ugarit"
+    ],
+    "homepage": "https://github.com/ugarit/ranger",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ugarit/ranger/issues",
+        "source": "https://github.com/ugarit/ranger"
+    },
+    "authors": [
+        {
+            "name": "Muath R Abu Ouda",
+            "email": "muathrabuouda@hotmail.com",
+            "role": "Vision Leader of Ugarit"
+        },
+        {
+            "name": "Taylor Otwell",
+            "email": "taylor@laravel.com",
+            "role": "Original Creator & Primary Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "heritage/broadcasting": "^1.00.00",
+        "heritage/contracts": "^1.00.00",
+        "heritage/database": "^1.00.00",
+        "heritage/http": "^1.00.00",
+        "heritage/routing": "^1.00.00",
+        "heritage/support": "^1.00.00",
+        "heritage/validation": "^1.00.00",
+        "ugarit/serializable-closure": "^1.00.00",
+        "ugarit/surveyor": "^1.00.00",
+        "spatie/php-structure-discoverer": "^2.3",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "inertiajs/inertia-ugarit": "^3.0",
+        "ugarit/pint": "^1.00.00",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "2.1.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ugarit\\Ranger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\": "workbench/app/",
+            "Ugarit\\Ranger\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "ugarit": {
+            "providers": [
+                "Ugarit\\Ranger\\RangerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "version": "1.00.00"
+}

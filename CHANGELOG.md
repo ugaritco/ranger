@@ -1,0 +1,219 @@
+# Release Notes
+
+## [Unreleased](https://github.com/ugarit/ranger/compare/v0.5.1...main)
+
+## [v0.5.1](https://github.com/ugarit/ranger/compare/v0.5.0...v0.5.1) - 2026-09-02
+
+### What's Changed
+
+* Handle enum meta and ignoring enum meta by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/48
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.5.0...v0.5.1
+
+## [v0.5.0](https://github.com/ugarit/ranger/compare/v0.4.0...v0.5.0) - 2026-08-21
+
+### What's Changed
+
+* Leave marked declarations out of collected components by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/47
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.4.0...v0.5.0
+
+## [v0.4.0](https://github.com/ugarit/ranger/compare/v0.3.0...v0.4.0) - 2026-08-21
+
+### What's Changed
+
+* Stop rescanning the application for every collector by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/46
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.3.0...v0.4.0
+
+## [v0.3.0](https://github.com/ugarit/ranger/compare/v0.2.5...v0.3.0) - 2026-08-19
+
+### What's Changed
+
+* Add Dependabot cooldown of 5 days by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/ugarit/ranger/pull/38
+* Add support for eloquent class attributes by [@jradtilbrook](https://github.com/jradtilbrook) in https://github.com/ugarit/ranger/pull/37
+* Enable Dependabot auto-merge by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/ugarit/ranger/pull/39
+* Bump actions/checkout from 6.0.2 to 6.0.3 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/ugarit/ranger/pull/40
+* Bump actions/checkout from 6.0.3 to 7.0.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/ugarit/ranger/pull/42
+* Bump actions/checkout from 7.0.0 to 7.0.1 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/ugarit/ranger/pull/43
+* Count a single rule parameter as having parameters by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/44
+* Stop stripping quotes from URL default values by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/45
+
+### New Contributors
+
+* [@jradtilbrook](https://github.com/jradtilbrook) made their first contribution in https://github.com/ugarit/ranger/pull/37
+* [@dependabot](https://github.com/dependabot)[bot] made their first contribution in https://github.com/ugarit/ranger/pull/40
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.5...v0.3.0
+
+## [v0.2.5](https://github.com/ugarit/ranger/compare/v0.2.4...v0.2.5) - 2026-05-19
+
+### What's Changed
+
+* update `ClassResult` to `ClassLikeResult` by [@levikl](https://github.com/levikl) in https://github.com/ugarit/ranger/pull/34
+* Pin GitHub Actions to commit SHAs and add Dependabot config by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/36
+
+### New Contributors
+
+* [@levikl](https://github.com/levikl) made their first contribution in https://github.com/ugarit/ranger/pull/34
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.4...v0.2.5
+
+## [v0.2.4](https://github.com/ugarit/ranger/compare/v0.2.3...v0.2.4) - 2026-05-12
+
+### What's Changed
+
+* Respect $hidden, $visible, and $appends on model components by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/33
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.3...v0.2.4
+
+## [v0.2.3](https://github.com/ugarit/ranger/compare/v0.2.2...v0.2.3) - 2026-05-07
+
+### What's Changed
+
+* Handle UnionType in InertiaComponents merge by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/32
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.2...v0.2.3
+
+## [v0.2.2](https://github.com/ugarit/ranger/compare/v0.2.1...v0.2.2) - 2026-05-06
+
+### What's Changed
+
+* Merge APP_URL port into explicit Route::domain URIs by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/31
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.1...v0.2.2
+
+## [v0.2.1](https://github.com/ugarit/ranger/compare/v0.2.0...v0.2.1) - 2026-05-05
+
+### What's Changed
+
+* Skip JsonResource subclasses in arrayable fallback by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/30
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.2.0...v0.2.1
+
+## [v0.2.0](https://github.com/ugarit/ranger/compare/v0.1.12...v0.2.0) - 2026-05-04
+
+### What's Changed
+
+* Collect API resource and arrayable responses by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/27
+* Resolve route binding types via Surveyor analyzer by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/28
+* Surface JSON:API resource additional data by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/29
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.12...v0.2.0
+
+## [v0.1.12](https://github.com/ugarit/ranger/compare/v0.1.10...v0.1.12) - 2026-04-16
+
+### What's Changed
+
+* Return relative URIs for explicit Route::domain routes by [@benddailey](https://github.com/benddailey) in https://github.com/ugarit/ranger/pull/26
+
+### New Contributors
+
+* [@benddailey](https://github.com/benddailey) made their first contribution in https://github.com/ugarit/ranger/pull/26
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.10...v0.1.12
+
+## [v0.1.10](https://github.com/ugarit/ranger/compare/v0.1.9...v0.1.10) - 2026-04-07
+
+### What's Changed
+
+* Respect app URL base path by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/24
+* Fix model binding key resolution for camelCase route parameters by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/25
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.9...v0.1.10
+
+## [v0.1.9](https://github.com/ugarit/ranger/compare/v0.1.8...v0.1.9) - 2026-03-17
+
+* Makes imports consistent by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/ugarit/ranger/pull/21
+* Add Ugarit 13 support by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/ugarit/ranger/pull/22
+
+## [v0.1.8](https://github.com/ugarit/ranger/compare/v0.1.7...v0.1.8) - 2026-01-27
+
+### What's Changed
+
+* Fix error when projects contain UnitEnums. by [@Jasonej](https://github.com/Jasonej) in https://github.com/ugarit/ranger/pull/15
+* Fix integer id seen as string by [@mathieutu](https://github.com/mathieutu) in https://github.com/ugarit/ranger/pull/16
+* fix(broadcast-events): support ShouldBroadcastNow alongside ShouldBroadcast by [@JorgeRui](https://github.com/JorgeRui) in https://github.com/ugarit/ranger/pull/18
+* Fix unit enum case values in Enums collector by [@JorgeRui](https://github.com/JorgeRui) in https://github.com/ugarit/ranger/pull/19
+
+### New Contributors
+
+* [@Jasonej](https://github.com/Jasonej) made their first contribution in https://github.com/ugarit/ranger/pull/15
+* [@mathieutu](https://github.com/mathieutu) made their first contribution in https://github.com/ugarit/ranger/pull/16
+* [@JorgeRui](https://github.com/JorgeRui) made their first contribution in https://github.com/ugarit/ranger/pull/18
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.7...v0.1.8
+
+## [v0.1.7](https://github.com/ugarit/ranger/compare/v0.1.6...v0.1.7) - 2026-01-12
+
+### What's Changed
+
+* Handle empty Inertia props correctly by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/13
+* Strip scheme from forced route URL in route by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/14
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.6...v0.1.7
+
+## [v0.1.6](https://github.com/ugarit/ranger/compare/v0.1.5...v0.1.6) - 2026-01-06
+
+### What's Changed
+
+* Exclude `/workbench` directory as it only used for package development by [@crynobone](https://github.com/crynobone) in https://github.com/ugarit/ranger/pull/11
+* Detect and record `withAllErrors` property in Inertia by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/12
+
+### New Contributors
+
+* [@crynobone](https://github.com/crynobone) made their first contribution in https://github.com/ugarit/ranger/pull/11
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.5...v0.1.6
+
+## [v0.1.5](https://github.com/ugarit/ranger/compare/v0.1.4...v0.1.5) - 2025-12-29
+
+### What's Changed
+
+* Add file paths to model component by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/10
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.4...v0.1.5
+
+## [v0.1.4](https://github.com/ugarit/ranger/compare/v0.1.3...v0.1.4) - 2025-12-29
+
+### What's Changed
+
+* Fix environment variable parsing for base paths specifically by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/8
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.3...v0.1.4
+
+## [v0.1.3](https://github.com/ugarit/ranger/compare/v0.1.2...v0.1.3) - 2025-12-26
+
+### What's Changed
+
+* Handle eager loading of models and snake casing by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/6
+* Create release script by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/7
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.2...v0.1.3
+
+## [v0.1.2](https://github.com/ugarit/ranger/compare/v0.1.1...v0.1.2) - 2025-12-26
+
+### What's Changed
+
+* Model relations fix by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/3
+* Fix static analysis by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/4
+* Remove unnecessary artifacts from release by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/5
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.1...v0.1.2
+
+## [v0.1.1](https://github.com/ugarit/ranger/compare/v0.1.0...v0.1.1) - 2025-12-22
+
+### What's Changed
+
+* Set paths for tests by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/1
+* Fix Inertia optional property detection by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/ugarit/ranger/pull/2
+
+### New Contributors
+
+* [@joetannenbaum](https://github.com/joetannenbaum) made their first contribution in https://github.com/ugarit/ranger/pull/1
+
+**Full Changelog**: https://github.com/ugarit/ranger/compare/v0.1.0...v0.1.1
+
+## v0.1.0 (202x-xx-xx)
+
+Initial pre-release.

@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Pint",
+            "type": "shell",
+            "command": "./vendor/bin/pint --dirty",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "./vendor/bin/pest",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+<?php
+
+namespace Ugarit\Ranger\Collectors;
+
+use Closure;
+use Heritage\Http\Resources\Json\JsonResource;
+use Ugarit\Ranger\Components\JsonApiResponse;
+use Ugarit\Ranger\Components\JsonResponse;
+use Ugarit\Ranger\Components\ResourceResponse;
+use Ugarit\Ranger\Support\AnalyzesRoutes;
+use Ugarit\Surveyor\Analyzed\MethodResult;
+use Ugarit\Surveyor\Analyzer\Analyzer;
+use Ugarit\Surveyor\Analyzer\ArrayableResolver;
+use Ugarit\Surveyor\Types\ArrayType;
+use Ugarit\Surveyor\Types\ClassType;
+use Ugarit\Surveyor\Types\Entities\InertiaRender;
+use Ugarit\Surveyor\Types\Entities\JsonApiResourceResponse as SurveyorJsonApiResourceResponse;
+use Ugarit\Surveyor\Types\Entities\ResourceResponse as SurveyorResourceResponse;
+use Ugarit\Surveyor\Types\IntersectionType;
+use Ugarit\Surveyor\Types\UnionType;
+
+class Response
+{
+    use AnalyzesRoutes;
+
+    public function __construct(protected Analyzer $analyzer)
+    {
+        //
+    }
+
+    /**
+     * @return list<string|JsonResponse|ResourceResponse|JsonApiResponse>
+     */
+    public function parseResponse(array $action): array
+    {
+        $result = $this->analyzeRoute($action);
+
+        if (! $result) {
+            return [];
+        }
+
+        return array_merge(
+            $this->getInertiaResponse($result),
+            $this->getJsonResponse($result),
+            $this->getResourceResponse($result),
+            $this->getJsonApiResponse($result),
+            $this->getArrayableClassResponse($result),
+        );
+    }
+
+    protected function getInertiaResponse(MethodResult $result): array
+    {
+        /** @var InertiaRender[] $responses */
+        $responses = $this->filterReturnTypesFor(
+            $result,
+            fn ($type) => $type instanceof InertiaRender,
+        );
+
+        foreach ($responses as $response) {
+            InertiaComponents::addComponent($response->view, $response->data);
+        }
+
+        return array_map(fn ($response) => $response->view, $responses);
+    }
+
+    protected function getJsonResponse(MethodResult $result): array
+    {
+        /** @var ArrayType[] $responses */
+        $responses = $this->filterReturnTypesFor(
+            $result,
+            fn ($type) => $type instanceof ArrayType,
+        );
+
+        return array_map(fn ($response) => new JsonResponse($response->value), $responses);
+    }
+
+    protected function getResourceResponse(MethodResult $result): array
+    {
+        /** @var SurveyorResourceResponse[] $responses */
+        $responses = $this->filterReturnTypesFor(
+            $result,
+            fn ($type) => $type instanceof SurveyorResourceResponse,
+        );
+
+        return array_map(fn ($response) => new ResourceResponse(
+            resourceClass: $response->resourceClass,
+            data: $response->data instanceof ArrayType ? $response->data->value : [],
+            isCollection: $response->isCollection,
+            wrap: $response->wrap,
+            additional: $response->additional instanceof ArrayType ? $response->additional->value : [],
+        ), $responses);
+    }
+
+    protected function getJsonApiResponse(MethodResult $result): array
+    {
+        /** @var SurveyorJsonApiResourceResponse[] $responses */
+        $responses = $this->filterReturnTypesFor(
+            $result,
+            fn ($type) => $type instanceof SurveyorJsonApiResourceResponse,
+        );
+
+        return array_map(fn ($response) => new JsonApiResponse(
+            resourceClass: $response->resourceClass,
+            attributes: $response->attributes instanceof ArrayType ? $response->attributes->value : [],
+            relationships: $response->relationships instanceof ArrayType ? $response->relationships->value : [],
+            links: $response->links instanceof ArrayType ? $response->links->value : [],
+            meta: $response->meta instanceof ArrayType ? $response->meta->value : [],
+            isCollection: $response->isCollection,
+            additional: $response->additional instanceof ArrayType ? $response->additional->value : [],
+        ), $responses);
+    }
+
+    protected function getArrayableClassResponse(MethodResult $result): array
+    {
+        $responses = $this->filterReturnTypesFor(
+            $result,
+            fn ($type) => get_class($type) === ClassType::class
+                && ! is_a($type->resolved(), JsonResource::class, true),
+        );
+
+        $resolver = app(ArrayableResolver::class);
+        $resolved = [];
+
+        foreach ($responses as $classType) {
+            $arrayType = $resolver->resolve($classType);
+
+            if ($arrayType instanceof ArrayType) {
+                $resolved[] = new JsonResponse($arrayType->value);
+            }
+        }
+
+        return $resolved;
+    }
+
+    protected function filterReturnTypesFor(MethodResult $result, Closure $filter): array
+    {
+        $returnType = $result->returnType();
+        // The MultiType contract declares no members, so the implementations
+        // that actually hold a list of types are named here instead.
+        $returnTypes = ($returnType instanceof UnionType || $returnType instanceof IntersectionType)
+            ? $returnType->types
+            : [$returnType];
+
+        return array_values(array_filter($returnTypes, $filter));
+    }
+}
